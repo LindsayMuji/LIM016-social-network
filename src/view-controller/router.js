@@ -7,10 +7,25 @@ const changeView = (route) => {
 
   mainContainer.innerHTML = ' ';
 
-  // eslint-disable-next-line default-case
   switch (route) {
-    case '#/home':
+    case '': case '#/': case '#/home':
       mainContainer.appendChild(components.Login());
+      break;
+
+    /* case '#/profileRegister': {
+      mainContainer.appendChild(components.Registro());
+      break;
+    }
+    case '#/profile': {
+      mainContainer.appendChild(components.Profile());
+      break;
+    } */
+    case '#/signUp': {
+      mainContainer.appendChild(components.SignUp());
+      break;
+    }
+    default:
+      mainContainer.appendChild(components.different());
       break;
   }
 };

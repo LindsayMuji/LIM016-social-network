@@ -31,5 +31,11 @@ export const logIn = () => {
   divElement.setAttribute('id', 'contentLogin');
   divElement.classList.add('contentLogin');
   divElement.innerHTML = viewLogIn;
+
+  /* const emailLogin = divElement.querySelector('#emailLogin');
+  const pass = divElement.querySelector('#pass');
+  const iconEye = divElement.querySelector('.iconEye');
+  const icon = divElement.querySelector('i'); */
+
   return divElement;
 };
