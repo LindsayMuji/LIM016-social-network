@@ -1,5 +1,5 @@
-export const logIn = ()=> {
-    const viewLogIn = `
+export const logIn = () => {
+  const viewLogIn = `
     <form id='formLogin' class='formLogin'>
     <img class='turistik' src='../Images/home.jpg'>
     <h2 class='tituloLogin'>TURISTI - K</h2>
@@ -20,14 +20,14 @@ export const logIn = ()=> {
       </div>
     </form> `;
 
-const divElement = document.createElement('div');
+  const divElement = document.createElement('div');
   divElement.setAttribute('id', 'contentLogin');
   divElement.setAttribute('class', 'contentLogin');
   divElement.innerHTML = viewLogIn;
-  /*const emailLogin = divElement.querySelector('#emailLogin');
+  /* const emailLogin = divElement.querySelector('#emailLogin');
   const pass = divElement.querySelector('#pass');
   const iconEye = divElement.querySelector('.iconEye');
-  const icon = divElement.querySelector('i');*/
+  const icon = divElement.querySelector('i'); */
 
   return divElement;
 };
