@@ -6,4 +6,5 @@ export const components = {
   Login: logIn,
   SignUp: signUp,
   different: Different,
+
 };
