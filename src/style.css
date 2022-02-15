@@ -109,12 +109,12 @@
     cursor: pointer;
 }
 
-.iconEye{
-    position: absolute;
-    right: 180px;
-    margin: 5px;
+.passLogin::placeholder{
+    background-image: url(./Images/211739_eye_icon.png);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position:right center ;
     cursor: pointer;
-    top: 40%;
 }
 
 @media screen and (max-width: 768px) {

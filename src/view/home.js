@@ -11,7 +11,7 @@ export const logIn = () => {
         </div> 
         <div class="password-eye" id="inputBox">
           <input type='password' placeholder='Ingrese su contraseña' id='pass' class='passLogin' required>
-          <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
+         
         </div> 
         <button type='submit' class='save' id="inputBox">LogIn</button>
         <div class='loginWhit' id="inputBox">
@@ -31,11 +31,5 @@ export const logIn = () => {
   divElement.setAttribute('id', 'contentLogin');
   divElement.classList.add('contentLogin');
   divElement.innerHTML = viewLogIn;
-
-  /* const emailLogin = divElement.querySelector('#emailLogin');
-  const pass = divElement.querySelector('#pass');
-  const iconEye = divElement.querySelector('.iconEye');
-  const icon = divElement.querySelector('i'); */
-
   return divElement;
 };

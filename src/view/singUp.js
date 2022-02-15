@@ -12,7 +12,7 @@ export const signUp = () => {
         </div>
         <div class="eye">
           <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
-          <input type='password' placeholder='Ingrese su contraseña' id='passSignUp' class='passSignUp'>
+          <input type='password' placeholder='Ingrese su contraseña ' id='passSignUp' class='passSignUp'>
         </div>
         <p id="signUpErrors" class="signUpErrors"></p>
         <input type='submit' value='Registrarme' id='signUp' class= 'btnSignUp' >
