@@ -7,11 +7,12 @@ export const logIn = () => {
       <h2 class='tituloLogin'>TURISTI - K</h2>
       <form id='formLogin' class='formLogin'>
         <div class="email" id="inputBox">
+          <span class='iconEmail'><i class="fas fa-envelope"></i></span>
           <input type='text' placeholder='Ingrese su correo electrónico' id='emailLogin' class='emailLogin'>
         </div> 
         <div class="password-eye" id="inputBox">
-          <input type='password' placeholder='Ingrese su contraseña' id='pass' class='passLogin' required>
           <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
+          <input type='password' placeholder='Ingrese su contraseña' id='pass' class='passLogin' required>
         </div> 
         <button type='submit' class='save' id="inputBox">LogIn</button>
         <div class='loginWhit' id="inputBox">
