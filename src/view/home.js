@@ -1,3 +1,9 @@
+/* eslint-disable no-unused-vars */
+import {
+  // estadoAutenticaciónUsuario,
+  inicioSesionUsuario,
+} from '../firebase/auth.js';
+
 export const logIn = () => {
   const viewLogIn = `
     <div class="containerImagen-name">
@@ -14,7 +20,7 @@ export const logIn = () => {
           <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
           <input type='password' placeholder='Ingrese su contraseña' id='pass' class='passLogin' required>
         </div> 
-        <button type='submit' class='save' id="inputBox">LogIn</button>
+        <button type='submit' class='save' id='inputBox'>LogIn</button>
         <div class='loginWhit' id="inputBox">
           <p class="texto">O bien ingresa con:</p>
         </div>
@@ -32,5 +38,20 @@ export const logIn = () => {
   divElement.setAttribute('id', 'contentLogin');
   divElement.classList.add('contentLogin');
   divElement.innerHTML = viewLogIn;
+
+  const botonSubmit = divElement.querySelector('#formLogin');
+  botonSubmit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const password = divElement.querySelector('#pass').value;
+    const email = divElement.querySelector('#emailLogin').value;
+    inicioSesionUsuario(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  });
   return divElement;
 };

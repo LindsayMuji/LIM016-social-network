@@ -1,14 +1,13 @@
 /* eslint-disable import/no-unresolved */
 // Import the functions you need from the SDKs you need
-/* import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js';
 
 import {
   getAuth,
-  createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
-  sendEmailVerification,
 } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
-import { getDataBase } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js'
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,11 +24,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDataBase(app);
 const auth = getAuth(app);
 
 export {
-  createUserWithEmailAndPassword,
+  initializeApp,
+  auth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
-  sendEmailVerification,
-}; */
+};
