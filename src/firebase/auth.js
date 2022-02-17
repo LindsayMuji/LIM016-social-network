@@ -17,5 +17,5 @@ const inicioSesionUsuario = (email, password) => signInWithEmailAndPassword(auth
 export {
   estadoAutenticaciónUsuario,
   inicioSesionUsuario,
-  createUser
+  createUser,
 };
