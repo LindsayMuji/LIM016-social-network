@@ -1,18 +1,21 @@
 import {
   auth,
   createUserWithEmailAndPassword,
-  // signInWithEmailAndPassword,
-  // sendEmailVerification,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
 } from './config.js';
 
 // SIGN-UP
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
-// SIGN-IN
-// const loginUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
-// SEND MESSSAGE OF VERIFICATION TO EMAIL
-// const emailVerification = () => sendEmailVerification(auth.currentUser);
+
+// Observador de estado de autenticación
+const estadoAutenticaciónUsuario = (callback) => onAuthStateChanged(auth, callback);
+
+// Acceso de usuarios existentes
+const inicioSesionUsuario = (email, password) => signInWithEmailAndPassword(auth, email, password);
+
 export {
-  createUser,
-  // loginUser,
-  // emailVerification,
+  estadoAutenticaciónUsuario,
+  inicioSesionUsuario,
+  createUser
 };
