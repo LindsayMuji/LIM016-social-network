@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 import { createUser } from '../firebase/auth.js';
 
@@ -42,10 +43,8 @@ export const signUp = () => {
     const pass = divElement.querySelector('#passSignUp').value;
     createUser(email, pass)
       .then((userCredential) => {
-        // eslint-disable-next-line no-shadow
         const user = userCredential.user;
         window.location.hash = '#/home';
-        console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;

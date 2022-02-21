@@ -15,13 +15,13 @@ const changeView = (route) => {
     /* case '#/profileRegister': {
       mainContainer.appendChild(components.Registro());
       break;
-    }
-    case '#/profile': {
-      mainContainer.appendChild(components.Profile());
-      break;
     } */
     case '#/signUp': {
       mainContainer.appendChild(components.SignUp());
+      break;
+    }
+    case '#/muro': {
+      mainContainer.appendChild(components.NewPost());
       break;
     }
     default:

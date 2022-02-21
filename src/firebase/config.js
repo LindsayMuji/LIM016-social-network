@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js';
@@ -8,6 +9,13 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+} from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -23,6 +31,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 // Exportación de funciones auth
 export {
@@ -30,4 +39,12 @@ export {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+};
+
+// Exportación de funciones firestore
+export {
+  db,
+  collection,
+  addDoc,
+  getDocs,
 };

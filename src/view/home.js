@@ -47,6 +47,7 @@ export const logIn = () => {
     inicioSesionUsuario(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        window.location.hash = '#/muro';
       })
       .catch((error) => {
         const errorCode = error.code;
