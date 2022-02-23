@@ -14,22 +14,22 @@ export const logIn = () => {
       <form id='formLogin' class='formLogin'>
         <div class="email" id="inputBox">
           <span class='iconEmail'><i class="fas fa-envelope"></i></span>
-          <input type='text' placeholder='Ingrese su correo electrónico' id='emailLogin' class='emailLogin'>
+          <input type='text' placeholder='Email' id='emailLogin' class='emailLogin'>
         </div> 
         <div class="password-eye" id="inputBox">
           <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
-          <input type='password' placeholder='Ingrese su contraseña' id='pass' class='passLogin' required>
+          <input type='password' placeholder='Password' id='pass' class='passLogin' required>
         </div> 
-        <button type='submit' class='save' id='inputBox'>LogIn</button>
+        <button type='submit' class='save' id='inputBox'>Log In</button>
         <div class='loginWhit' id="inputBox">
-          <p class="texto">O bien ingresa con:</p>
+          <p class="texto"> or log in with:</p>
         </div>
         <div class='iconos_sesion' id="inputBox">
           <img src='Images/facebook.png' id='btn-facebook' class= 'btn-facebook'>  
           <img src='Images/google.png' id="btn-google" class="btn-google"> 
         </div>
         <div class='registrese' id="inputBox">
-          <p class="acountP">¿No tienes cuenta? <a href="#/signUp"> Regístrate aquí</a></p>
+          <p class="acountP">Don't you have an account? <a href="#/signUp"> Sign Up here</a></p>
         </div>
       </form>
     </div>`;
@@ -52,6 +52,7 @@ export const logIn = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert(errorMessage);
       });
   });
   return divElement;

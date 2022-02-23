@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/*Css login*/
 .contentLogin, .contentSignUp{
     display: flex;
     position: relative;
@@ -110,7 +111,7 @@
     cursor: pointer;
 }
 
-/********* Second Page*******/
+/********* SingUP*******/
 .imgSingup{
     position: absolute;
     width: 100%;
@@ -142,6 +143,62 @@
     margin-bottom: 20px;
 }
 
+/*muro*/
+.contentMuro{
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.formPost{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 80%;
+    background-color: #C4C4C4;
+    border-top: 3px solid #9ee675;
+    box-shadow: 0px 4px 4px rgba(81, 82, 79, 0.912);
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.postDescription{
+    width: 80%;
+    padding: 5px 9px;
+    color: #555;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.section-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 1rem;
+}
+.btnPostSave{
+    margin: 0.75rem 0;
+    background-color: #8BDB81;;
+    border:solid 1px #8BDB81;
+    border-radius: 1rem;
+    width: 5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    color: rgb(99, 97, 97);
+    font-size: 1rem;
+}
+.postContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+/*desing login y singUp*/
 @media screen and (max-width: 768px) {
     .containerImagen-name, .containerImagen-singup {
         position: absolute;

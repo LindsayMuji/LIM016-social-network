@@ -1,13 +1,20 @@
 /* eslint-disable no-const-assign */
 /* eslint-disable no-unused-vars */
-import { share, getShare } from '../firebase/firestore.js';
+import {
+  share,
+  getShare,
+  onGetShare,
+  deleteShare,
+} from '../firebase/firestore.js';
 
 let postContainer;
 export const newPost = () => {
   const viewNews = `
   <form id="formPost" class="formPost">
     <textarea class="postDescription" id="postDescription" rows="5" placeholder="¿Quieres compartir algo?"></textarea>
-    <button class="btnPostSave" id="btnPostSave"><h5>Compartir</h5></button>
+    <div class = "section-button">
+    <button class="btnPostSave" id="btnPostSave"><h5>Share</h5></button>
+    </div>
   </form>
   <section class="postContainer" id="postContainer"></section>
   `;
@@ -16,6 +23,7 @@ export const newPost = () => {
   divElement.setAttribute('class', 'contentMuro');
   divElement.innerHTML = viewNews;
   postContainer = divElement.querySelector('#postContainer');
+
   const formPost = divElement.querySelector('#formPost');
 
   formPost.addEventListener('submit', (e) => {
@@ -28,16 +36,25 @@ export const newPost = () => {
 };
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const querySnapshot = await getShare();
-  console.log(querySnapshot, 'que devuelves?');
-  let htmlPost = '';
-  querySnapshot.forEach((doc) => {
-    const dataPost = doc.data();
-    htmlPost += `
-        <div>
+  // const querySnapshot = await getShare();
+
+  onGetShare((querySnapshot) => {
+    let htmlPost = '';
+    querySnapshot.forEach((doc) => {
+      const dataPost = doc.data();
+      htmlPost += `
+        <div class="formPost">
             <h3>${dataPost.description}</h3>
+            <button class="btn-delete">Delete</button>
         </div>
         `;
+    });
+    postContainer.innerHTML = htmlPost;
+    const btnDelete = postContainer.querySelectorAll('.btn-delete');
+    btnDelete.forEach((btn) => {
+      btn.addEventListener('click', ({ target: { dataset } }) => {
+        deleteShare(dataset.id);
+      });
+    });
   });
-  postContainer.innerHTML = htmlPost;
 });

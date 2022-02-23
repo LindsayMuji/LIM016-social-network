@@ -10,21 +10,21 @@ export const signUp = () => {
     <div class="containerForm">
       <h2 class='tituloLogin'>TURISTI - K</h2>
       <form class='formSignUp' id='formSignUp'>
-        <h2 class = 'tituloSignUp'>Regístrate</h2>    
+        <h2 class = 'tituloSignUp'>Sign Up</h2>    
         <div class='divUserSignUp' id= 'inputBox'>
           <span class= 'iconUser'><i class="fas fa-user"></i></span>
-          <input type='text' placeholder='Ingrese su usuario' id ='userSignUp' class='userSignUp'required>
+          <input type='text' placeholder='User' id ='userSignUp' class='userSignUp'required>
         </div>
         <div class='divEmailSignUp' id= 'inputBox'>
           <span class='iconEmail'><i class="fas fa-envelope"></i></span>
-          <input type='text' placeholder='Ingrese su correo electrónico' id ='emailSignUp' class='emailSignUp' required>
+          <input type='text' placeholder='Email' id ='emailSignUp' class='emailSignUp' required>
         </div>
         <div class="eye" id= 'inputBox'>
           <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
-          <input type='password' placeholder='Ingrese su contraseña' id='passSignUp' class='passSignUp'required>
+          <input type='password' placeholder='Password' id='passSignUp' class='passSignUp'required>
         </div>
         <p id="signUpErrors" class="signUpErrors"></p>
-        <input type='submit' value='Registrarme' id='signUp' class= 'btnSignUp' >
+        <input type='submit' value='Sign Up' id='signUp' class= 'btnSignUp' >
       </form>
     </div>
     `;
