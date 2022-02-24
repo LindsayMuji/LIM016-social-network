@@ -18,6 +18,8 @@ import {
   onSnapshot,
   deleteDoc,
   doc,
+  getDoc,
+  updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js';
 
 // Your web app's Firebase configuration
@@ -53,4 +55,6 @@ export {
   onSnapshot,
   deleteDoc,
   doc,
+  getDoc,
+  updateDoc,
 };
