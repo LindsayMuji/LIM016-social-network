@@ -25,6 +25,9 @@ export const signUp = () => {
         </div>
         <p id="signUpErrors" class="signUpErrors"></p>
         <input type='submit' value='Sign Up' id='signUp' class= 'btnSignUp' >
+        <div class='iniciarSesion' id='inputBox'>
+          <p class="acountP">Do you have an account? <a href="#/home"> Log In</a></p>
+        </div>
       </form>
     </div>
     `;

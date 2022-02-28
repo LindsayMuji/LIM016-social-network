@@ -1,6 +1,7 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-unused-vars */
 import {
-  // estadoAutenticaciónUsuario,
+  estadoAutenticaciónUsuario,
   inicioSesionUsuario,
 } from '../firebase/auth.js';
 
@@ -14,7 +15,7 @@ export const logIn = () => {
       <form id='formLogin' class='formLogin'>
         <div class="email" id="inputBox">
           <span class='iconEmail'><i class="fas fa-envelope"></i></span>
-          <input type='text' placeholder='Email' id='emailLogin' class='emailLogin'>
+          <input type='text' placeholder='Email' id='emailLogin' class='emailLogin' autocomplete="off">
         </div> 
         <div class="password-eye" id="inputBox">
           <span class='iconEye'><i class="fas fa-eye-slash"></i></span>
@@ -38,9 +39,8 @@ export const logIn = () => {
   divElement.setAttribute('id', 'contentLogin');
   divElement.classList.add('contentLogin');
   divElement.innerHTML = viewLogIn;
-
-  const botonSubmit = divElement.querySelector('#formLogin');
-  botonSubmit.addEventListener('submit', (e) => {
+  const botonSubmit = divElement.querySelector('.save');
+  botonSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     const password = divElement.querySelector('#pass').value;
     const email = divElement.querySelector('#emailLogin').value;
@@ -56,4 +56,12 @@ export const logIn = () => {
       });
   });
   return divElement;
+};
+
+export const userState = () => {
+  estadoAutenticaciónUsuario((user) => {
+    if (user === null || user === undefined) {
+      window.location.hash = '#/home';
+    }
+  });
 };

@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from './config.js';
 
 // SIGN-UP
@@ -14,8 +15,12 @@ const estadoAutenticaciónUsuario = (callback) => onAuthStateChanged(auth, callb
 // Acceso de usuarios existentes
 const inicioSesionUsuario = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
+// Cerrar Sesión
+const cerrarSesionUsuario = () => signOut(auth);
+
 export {
   estadoAutenticaciónUsuario,
   inicioSesionUsuario,
   createUser,
+  cerrarSesionUsuario,
 };

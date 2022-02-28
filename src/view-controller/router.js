@@ -6,21 +6,16 @@ const changeView = (route) => {
   // para que no agregue nada porque solo quiero que cambie
 
   mainContainer.innerHTML = ' ';
-
   switch (route) {
     case '': case '#/': case '#/home':
-      mainContainer.appendChild(components.Login());
+      mainContainer.appendChild(components.LogIn());
       break;
-
-    /* case '#/profileRegister': {
-      mainContainer.appendChild(components.Registro());
-      break;
-    } */
     case '#/signUp': {
       mainContainer.appendChild(components.SignUp());
       break;
     }
     case '#/muro': {
+      components.UserState();
       mainContainer.appendChild(components.NewPost());
       break;
     }

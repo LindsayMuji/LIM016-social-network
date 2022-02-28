@@ -1,28 +1,39 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-const-assign */
 /* eslint-disable no-unused-vars */
 import {
   share,
-  getShare,
+  // getShare,
   onGetShare,
   deleteShare,
   getOneShare,
   updateShare,
 } from '../firebase/firestore.js';
 
+import {
+  viewHeader,
+} from './header.js';
+
+import {
+  cerrarSesionUsuario,
+} from '../firebase/auth.js';
+
 export const newPost = () => {
   const viewNews = `
-  <form id="formPost" class="formPost">
-    <textarea class="postDescription" id="postDescription" rows="5" placeholder="Do you Wanto to share something?"></textarea>
-    <div class = "section-button">
-    <button class="btnPostSave" id="btnPostSave"><h5>Share</h5></button>
-    </div>
-  </form>
-  <section class="postContainer" id="postContainer"></section>
+  <div class = 'seccionPost'>
+    <form id="formPost" class="formPost">
+        <textarea class="postDescription" id="postDescription" rows="5" placeholder="Do you Want| to share something?"></textarea>
+        <div class = "section-button">
+        <button class="btnPostSave" id="btnPostSave"><h5>Share</h5></button>
+        </div>
+    </form>
+    <section class="postContainer" id="postContainer"></section>
+  </div>
   `;
   const divElement = document.createElement('div');
   divElement.setAttribute('id', 'contentMuro');
   divElement.setAttribute('class', 'contentMuro');
-  divElement.innerHTML = viewNews;
+  divElement.innerHTML = viewHeader + viewNews;
   const postContainer = divElement.querySelector('#postContainer');
   const formPost = divElement.querySelector('#formPost');
   let editStatus = false;
@@ -34,12 +45,16 @@ export const newPost = () => {
     querySnapshot.forEach((doc) => {
       const dataPost = doc.data();
       htmlPost += `
-          <div class="formPost">
-              <h3>${dataPost.description}</h3>
-              <button class="btn-delete" data-id="${doc.id}">Delete</button>
-              <button class="btn-edit" data-id="${doc.id}">Edit</button>
-          </div>
-          `;
+        <div class= 'publicacion'>
+            <div class = 'box-post'>
+                <h3 class = 'post' id = 'post'>${dataPost.description}</h3>
+            </div>
+            <div class = 'btn-Delete-Edit' id = 'btn-Delete-Edit'>
+                <button class="btn-delete" data-id="${doc.id}">Delete</button>
+                <button class="btn-edit" data-id="${doc.id}">Edit</button>
+            </div>
+        </div>
+        `;
     });
     postContainer.innerHTML = htmlPost;
     const btnDelete = postContainer.querySelectorAll('.btn-delete');
@@ -66,7 +81,9 @@ export const newPost = () => {
     e.preventDefault();
     formPost.btnPostSave.innerText = 'Share';
     const post = divElement.querySelector('#postDescription').value;
-    if (!editStatus) {
+    if (post === '') {
+      alert('share something with us!');
+    } else if (!editStatus) {
       share(post);
     } else {
       updateShare(id,
@@ -75,7 +92,18 @@ export const newPost = () => {
         });
       editStatus = false;
     }
+
     formPost.reset();
   });
+
+  const cerrarSesion = divElement.querySelector('#logOut');
+  cerrarSesion.addEventListener('click', () => {
+    cerrarSesionUsuario()
+      .then(() => {
+        window.location.hash = '#/home';
+      })
+      .catch((error) => (error));
+  });
+
   return divElement;
 };

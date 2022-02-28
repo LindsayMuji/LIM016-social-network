@@ -8,6 +8,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
 
 import {
@@ -44,6 +45,7 @@ export {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 };
 
 // Exportación de funciones firestore
