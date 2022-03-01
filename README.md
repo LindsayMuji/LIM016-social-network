@@ -6,9 +6,6 @@
 * [2. Objetivos de aprendizaje](#2-objetivos-de-aprendizaje)
 * [3. Diseño de la Interfaz de Usuario](#3-Diseño-de-la-Interfaz-de-Usuario)
 * [4. Pruebas unitarias](#4-Pruebas-unitarias)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 
 ## 1. Preámbulo
 
@@ -85,7 +82,7 @@ Los objetivos alcazados en este proyecto son:
 
 * _Login_ con Firebase:
 
-![Log In](https://github.com/LindsayMuji/LIM016-social-network/blob/main/src/Images/home.jpg)
+![Log In](https://github.com/LindsayMuji/LIM016-social-network/blob/main/src/Images/login.png)
 
 ![Sing Up](https://github.com/LindsayMuji/LIM016-social-network/blob/main/src/Images/singup.png)
 
