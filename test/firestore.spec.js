@@ -60,6 +60,7 @@ describe('Función getOneShare', () => {
         description: 'social network',
         idUser: '0001',
       };
+
       const result = await getOneShare(Publish.idUser);
       expect(result).toEqual('0001');
     });
