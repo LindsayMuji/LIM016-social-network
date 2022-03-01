@@ -61,7 +61,7 @@ describe('Función getOneShare', () => {
         idUser: '0001',
       };
       const result = await getOneShare('0001');
-      expect(result.Publish.idUser).toStrictEqual(Publish.idUser);
+      expect(result).toStrictEqual(Publish.idUser);
     });
   });
 });
