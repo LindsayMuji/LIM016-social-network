@@ -38,7 +38,7 @@ describe('Función updateShare', () => {
     expect(typeof updateShare).toBe('function');
   });
 
-  describe('función updateShare', () => {
+  describe('función updatePublish', () => {
     it('Deberia retornar una descripción para editar', async () => {
       const result = await updateShare('00000001', { description: 'Hola cómo estas' });
       expect(result).toStrictEqual({
@@ -60,8 +60,8 @@ describe('Función getOneShare', () => {
         description: 'social network',
         idUser: '0001',
       };
-      const result = await getOneShare('0001');
-      expect(result.Publish.idUser).toStrictEqual(Publish.idUser);
+      const result = await getOneShare(Publish.idUser);
+      expect(result).toEqual('0001');
     });
   });
 });

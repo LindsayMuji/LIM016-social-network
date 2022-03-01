@@ -19,14 +19,26 @@ import {
 
 export const newPost = () => {
   const viewNews = `
-  <div class = 'seccionPost'>
-    <form id="formPost" class="formPost">
+  <div class = "box-muro">
+    <div class = "content-profile">
+      <div class = "box-banner" >
+        <img class = "banner" src="../Images/banner.jpeg">
+      </div>
+      <div class = "box-photo" >
+        <img class = "photo" src="../Images/user.png">
+        <h3 class = "name">Juanita Suarez</h3>
+      </div>
+    </div>
+
+    <div class = "seccionPost">
+      <form id="formPost" class="formPost">
         <textarea class="postDescription" id="postDescription" rows="5" placeholder="Do you Want| to share something?"></textarea>
         <div class = "section-button">
-        <button class="btnPostSave" id="btnPostSave"><h5>Share</h5></button>
+          <button class="btnPostSave" id="btnPostSave"><h5>Share</h5></button>
         </div>
-    </form>
-    <section class="postContainer" id="postContainer"></section>
+      </form>
+      <section class="postContainer" id="postContainer"></section>
+    </div>
   </div>
   `;
   const divElement = document.createElement('div');

@@ -150,12 +150,51 @@
     width: 100%;
     height: 100%;
 }
+.box-muro{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.content-profile{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.box-banner{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.banner{
+    width: 50%;
+    object-fit: cover;
+}
+
+.box-photo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.photo{
+    width: 20%;
+    object-fit: cover;
+    border: 1px solid rgb(34, 33, 33);
+    border-radius: 90px;
+    margin: 20px;
+}
 
 .seccionPost{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
     width: 50%;
     margin: 20px;
 }
@@ -182,7 +221,7 @@
 }
 
 .postDescription{
-    width: 80%;
+    width: 95%;
     padding: 5px 9px;
     color: #555;
     border-radius: 10px;
@@ -191,7 +230,7 @@
 
 .box-post {
     background-color: #ffffff;
-    width: 80%;
+    width: 95%;
     padding: 5px 9px;
     border-radius: 5px;
     margin: 10px auto;
@@ -199,13 +238,13 @@
 
 .section-button, .btn-Delete-Edit{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
-    margin: 0 1rem;
+    margin: 0 2rem;
 }
 
 .btnPostSave, .btn-delete, .btn-edit{
-    margin: 0.75rem 0;
+    margin: 10px;
     background-color: #8BDB81;
     border:solid 1px #8BDB81;
     border-radius: 1rem;
@@ -271,5 +310,27 @@
         background: rgb(255 255 255 / 0.5);
         margin: 40px;
         border-radius: 50px;
+    }
+
+    .box-muro{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-profile{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .seccionPost{
+        width: 100%;
+    }
+
+    .formPost, .publicacion{
+        width: 80%;
     }
 }
