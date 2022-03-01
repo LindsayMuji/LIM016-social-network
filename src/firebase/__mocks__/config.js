@@ -11,4 +11,4 @@ export const collection = jest.fn();
 export const addDoc = jest.fn((document, data) => (data));
 export const doc = jest.fn(() => Promise.resolve({}));
 export const updateDoc = jest.fn((documents, values) => Promise.resolve(values));
-export const getDoc = jest.fn(() => Promise.resolve({ }));
+export const getDoc = jest.fn(() => Promise.resolve('0001'));
